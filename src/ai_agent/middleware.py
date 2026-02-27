@@ -24,11 +24,13 @@ class AIAgentWidgetMiddleware:
         ):
             try:
                 widget_html = render_to_string("ai_agent/widget.html", request=request)
+                # v2 forces cache-bust so browsers always load the latest widget files
+                _v = "v2"
                 inject = (
-                    f'<link rel="stylesheet" href="{static("ai_agent/css/widget.css")}">\n'
+                    f'<link rel="stylesheet" href="{static("ai_agent/css/widget.css")}?{_v}">\n'
                     f'<script>window.AI_AGENT_CHAT_URL = "/ai-agent/chat/";</script>\n'
                     f"{widget_html}\n"
-                    f'<script src="{static("ai_agent/js/widget.js")}"></script>\n'
+                    f'<script src="{static("ai_agent/js/widget.js")}?{_v}"></script>\n'
                 ).encode("utf-8")
 
                 response.content = response.content.replace(

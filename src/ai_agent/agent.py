@@ -3,7 +3,7 @@ import requests
 import anthropic
 from django.conf import settings
 
-CLAUDE_MODEL = "claude-3-5-sonnet-20241022"
+CLAUDE_MODEL = "claude-haiku-4-5"
 MAX_TOKENS = 1024
 
 SEARCH_LAYERS_TOOL = {

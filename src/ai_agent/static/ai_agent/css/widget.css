@@ -3,13 +3,13 @@
    ============================================= */
 
 #ai-agent-widget {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 2147483647; /* max int — above all MapStore2 overlays (which go up to 100000) */
-  pointer-events: auto;
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 2147483647 !important; /* max int — above all MapStore2 overlays (which go up to 100000) */
+  pointer-events: auto !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -22,7 +22,8 @@
   background: #2c7bb6;
   color: #fff;
   border: none;
-  cursor: pointer;
+  cursor: pointer !important;
+  pointer-events: auto !important;
   font-size: 26px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   display: flex;
