@@ -52,6 +52,13 @@ LANGUAGE_CODE = os.getenv("LANGUAGE_CODE", "en")
 if PROJECT_NAME not in INSTALLED_APPS:
     INSTALLED_APPS += (PROJECT_NAME,)
 
+# AI Agent app
+if "ai_agent" not in INSTALLED_APPS:
+    INSTALLED_APPS += ("ai_agent",)
+
+# Anthropic API key (read from environment — never hard-code)
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+
 # Location of url mappings
 ROOT_URLCONF = os.getenv("ROOT_URLCONF", "{}.urls".format(PROJECT_NAME))
 
@@ -77,3 +84,6 @@ TEMPLATES[0].pop("APP_DIRS", None)
 PROJECT_FIXTURES = [
     # List project-related fixture files here, in the order they should be loaded.
 ]
+
+# Inject AI Agent widget into every HTML page via middleware
+MIDDLEWARE += ("ai_agent.middleware.AIAgentWidgetMiddleware",)

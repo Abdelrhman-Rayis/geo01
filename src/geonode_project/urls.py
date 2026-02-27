@@ -21,13 +21,11 @@
 # Do not remove handler500 import. It is required to re-export
 # the custom error page handler for the GeoNode project
 # related issue: https://github.com/GeoNode/geonode-project/issues/570
-from geonode.urls import urlpatterns, handler500  # noqa
+from django.urls import include, path
 
-"""
-# You can register your own urlpatterns here
+from geonode.urls import handler500, urlpatterns  # noqa
+
+# AI Agent chat endpoint — prepend so it's matched before GeoNode catch-all routes
 urlpatterns = [
-    url(r'^/?$',
-        homepage,
-        name='home'),
- ] + urlpatterns
-"""
+    path("ai-agent/", include("ai_agent.urls", namespace="ai_agent")),
+] + urlpatterns

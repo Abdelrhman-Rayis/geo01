@@ -2,3 +2,4 @@
 # pip install -e git+https://github.com/GeoNode/geonode.git@master#egg=geonode
 # pip install -e git+https://github.com/GeoNode/geonode-mapstore-client.git@master#egg=django_geonode_mapstore_client
 git+https://github.com/GeoNode/geonode.git@master#egg=GeoNode
+anthropic>=0.40.0

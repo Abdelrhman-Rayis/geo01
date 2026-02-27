@@ -1,0 +1,21 @@
+<div id="ai-agent-widget">
+  <div id="ai-agent-panel" role="dialog" aria-label="AI GIS Assistant">
+    <div id="ai-agent-header">
+      <span>&#129302; GeoNode AI Assistant</span>
+      <button id="ai-agent-close" aria-label="Close chat">&times;</button>
+    </div>
+    <div id="ai-agent-messages" role="log" aria-live="polite"></div>
+    <div id="ai-agent-input-row">
+      <textarea
+        id="ai-agent-input"
+        rows="1"
+        placeholder="Search layers... e.g. 'flood risk zones'"
+        aria-label="Message input"
+      ></textarea>
+      <button id="ai-agent-send" aria-label="Send message">&#9658;</button>
+    </div>
+  </div>
+  <button id="ai-agent-toggle" aria-label="Open AI Assistant" title="GeoNode AI Assistant">
+    &#129302;
+  </button>
+</div>
